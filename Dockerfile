@@ -11,11 +11,11 @@ copy src /src
 
 EXPOSE 8081
 
-RUN mvn -q clean install
+RUN mvn -q clean install && mv target/*.jar app.jar
 RUN ls -lh /
 
 RUN echo $pwd
 WORKDIR /
-COPY  /target/**.jar app.jar
+#COPY  /target/**.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
