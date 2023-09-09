@@ -6,7 +6,7 @@ RUN apt update
 RUN apt install -y openjdk-17-jre maven
 
 COPY pom.xml .
-copy src .
+copy src src
 
 EXPOSE 8081
 
