@@ -5,6 +5,7 @@ MAINTAINER Rooban
 RUN apt update
 RUN apt install -y openjdk-17-jre maven > /dev/null
 
+WORKDIR /
 COPY pom.xml .
 copy src src
 
