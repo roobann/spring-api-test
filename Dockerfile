@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim as build
+FROM debian:bullseye-slim
 
 MAINTAINER Rooban
 
@@ -15,6 +15,7 @@ RUN mvn -q clean install
 RUN ls -lh ./
 
 RUN echo $pwd
-COPY  --from=build /target/**.jar app.jar
+WORKDIR /
+COPY  /target/**.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
