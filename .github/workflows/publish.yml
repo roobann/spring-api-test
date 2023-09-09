@@ -15,7 +15,7 @@ jobs:
       - name: Build & Push
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: /
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ env.TAG }}
         
