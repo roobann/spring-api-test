@@ -13,7 +13,7 @@ EXPOSE 8081
 RUN mvn -B clean install
 RUN ls -lh target
 WORKDIR /
-RUN $pwd
+RUN echo $pwd
 ADD /target/**.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
