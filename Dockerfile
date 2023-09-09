@@ -15,6 +15,6 @@ RUN mvn -q clean install
 RUN ls -lh ./target
 
 RUN echo $pwd
-COPY ./target/**.jar app.jar
+COPY  --from=build /target/**.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
