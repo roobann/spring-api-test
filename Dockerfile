@@ -11,9 +11,9 @@ copy src src
 EXPOSE 8081
 
 RUN mvn -B clean install
-Run ls -lh target
+RUN ls -lh target
 WORKDIR /
-ARG JAR_FILE=target/spring-api-test*.jar
-ADD ${JAR_FILE} app.jar
+RUN $pwd
+ADD target/**.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
