@@ -13,7 +13,7 @@ EXPOSE 8081
 
 RUN mvn clean install
 WORKDIR /
-ARG JAR_FILE=tmp/target/spring-api-test*.jar
+ARG JAR_FILE=/tmp/target/spring-api-test*.jar
 ADD ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
