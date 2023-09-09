@@ -11,6 +11,7 @@ copy src src
 EXPOSE 8081
 
 RUN mvn -B clean install
+Run ls -lh
 ARG JAR_FILE=/target/spring-api-test*.jar
 ADD ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
