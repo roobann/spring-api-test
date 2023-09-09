@@ -12,7 +12,7 @@ copy src /src
 EXPOSE 8081
 
 RUN mvn -q clean install
-RUN ls -lh ./
+RUN ls -lh /
 
 RUN echo $pwd
 WORKDIR /
