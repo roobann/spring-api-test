@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:bullseye-slim as build
 
 MAINTAINER Rooban
 
@@ -12,7 +12,7 @@ copy src src
 EXPOSE 8081
 
 RUN mvn -q clean install
-RUN ls -lh ./target
+RUN ls -lh ./
 
 RUN echo $pwd
 COPY  --from=build /target/**.jar app.jar
